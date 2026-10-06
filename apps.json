@@ -146,6 +146,22 @@
         "zu": "Isihlungi sokukhanya okuluhlaza nokufiphaza isikrini: imodi yasebusuku ku-Kelvin"
       },
       "order": 1
+    },
+    {
+      "id": "halen",
+      "androidPackage": "com.crazypenguin.halenquitsmoking",
+      "icon": "https://raw.githubusercontent.com/XPersPective/napp_apps/HEAD/icons/halen.png",
+      "name": {
+        "en": "Halen: Quit Smoking Tracker",
+        "tr": "Halen: Quit Smoking Tracker",
+        "de": "Halen: Quit Smoking Tracker"
+      },
+      "description": {
+        "en": "Cut down first, then quit — an adaptive plan that stays private on your device.",
+        "tr": "Önce azalt, sonra bırak: kendini yeniden hesaplayan plan, cihazında gizli.",
+        "de": "Erst reduzieren, dann aufhören – ein Plan, der sich anpasst. Privat am Gerät."
+      },
+      "order": 2
     }
   ]
 }
