@@ -1,19 +1,4 @@
 {
   "schema": 1,
-  "apps": [
-    {
-      "id": "kamubul",
-      "androidPackage": "com.crazypenguin.kamubul",
-      "icon": "https://raw.githubusercontent.com/XPersPective/napp_apps/HEAD/icons/kamubul.png",
-      "name": {
-        "en": "KamuBul: Turkish Public Jobs",
-        "tr": "KamuBul - Kamu İlanları, KPSS"
-      },
-      "description": {
-        "en": "All Turkish public sector job listings in one place, with deadlines and requirements.",
-        "tr": "Memur, işçi ve belediye ilanları tek yerde; şartlar ve son başvuru tarihleriyle."
-      },
-      "order": 3
-    }
-  ]
+  "apps": []
 }
