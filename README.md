@@ -14,8 +14,9 @@ themselves, and open Google Play on Android or the App Store on iOS.
 
 ## Adding an app
 
-Only add an app to `apps.json` once it is **live** in a store — a broken store
-link is worse than no entry. Apps still in review go to `pending.json` (below).
+Apps live on Google Play under our developer account are added automatically
+(see *Automatic sync*). Add others by hand, and only once they are **live** in a
+store — a broken store link is worse than no entry.
 
 1. Put a square PNG icon (256×256 is plenty) in `icons/<id>.png`.
 2. Add an entry to `apps.json`:
@@ -41,12 +42,23 @@ link is worse than no entry. Apps still in review go to `pending.json` (below).
 
 No release of any app is needed — the change reaches every app within a day.
 
-## Apps that are not live yet
+## Automatic sync
 
-Put a finished entry (same format) in `pending.json` instead of `apps.json`.
-`.github/workflows/promote-live.yml` runs `tool/promote_live.py` every day: as
-soon as the app's Google Play page answers, the entry moves to `apps.json` and
-appears in every app's Discover tab automatically. Run the workflow by hand
-(Actions → Promote live apps → Run workflow) to promote immediately.
+`.github/workflows/sync-stores.yml` runs `tool/sync_stores.py` daily (or by
+hand: Actions → Sync store catalogue → Run workflow). It reads only public
+pages — the Google Play developer page (en-US, tr-TR) and the iTunes lookup for
+our App Store account — and then:
+
+- adds apps new on Google Play (English and Turkish name and short
+  description, icon in `icons/`, next `order`);
+- sets `appStoreId` where the App Store lists the same bundle id;
+- refreshes icons whose store version changed.
+
+Existing translations, `order` and icon URLs are never overwritten. Every entry
+is validated before writing; any store error leaves `apps.json` untouched.
+Preview with `python3 tool/sync_stores.py --dry-run`.
+
+**Removals stay manual:** an app that disappears from Google Play is only listed
+in `sync-report.json` and as a workflow warning — delete its entry by hand.
 
 Schema: `ORTAK_UYGULAMA_STANDARDI.md` §3.6 (schema 1).

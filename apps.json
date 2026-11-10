@@ -166,6 +166,7 @@
     {
       "id": "kamubul",
       "androidPackage": "com.crazypenguin.kamubul",
+      "appStoreId": "6826592263",
       "icon": "https://raw.githubusercontent.com/XPersPective/napp_apps/HEAD/icons/kamubul.png",
       "name": {
         "en": "KamuBul: Turkish Public Jobs",
@@ -176,6 +177,34 @@
         "tr": "Memur, işçi ve belediye ilanları tek yerde; şartlar ve son başvuru tarihleriyle."
       },
       "order": 3
+    },
+    {
+      "id": "nketo",
+      "androidPackage": "com.crazypenguin.nketotracker",
+      "icon": "https://raw.githubusercontent.com/XPersPective/napp_apps/HEAD/icons/nketo.png",
+      "name": {
+        "en": "N Keto Tracker",
+        "tr": "N Keto Tracker"
+      },
+      "description": {
+        "en": "Private keto journal with offline glucose + BHB GKI calculator.",
+        "tr": "Çevrimdışı glukoz + BHB GKI hesaplayıcılı özel keto günlüğü."
+      },
+      "order": 4
+    },
+    {
+      "id": "nshoptor",
+      "androidPackage": "com.crazypenguin.nshoptor",
+      "icon": "https://raw.githubusercontent.com/XPersPective/napp_apps/HEAD/icons/nshoptor.png",
+      "name": {
+        "en": "NShoptor: Smart Grocery List",
+        "tr": "NShoptor: Alışveriş Listesi"
+      },
+      "description": {
+        "en": "Grocery list & budget: planned vs actual prices, receipt scan and voice.",
+        "tr": "Alışveriş listesi ve bütçe: tahmini/gerçek fiyat, fiş ve sesli ekleme."
+      },
+      "order": 5
     }
   ]
 }

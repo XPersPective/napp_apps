@@ -1,0 +1,41 @@
+name: Sync store catalogue
+
+# Daily: adds apps that are live on Google Play, joins App Store ids and
+# refreshes icons (tool/sync_stores.py). Removals stay manual.
+on:
+  schedule:
+    - cron: '17 6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-stores
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'   # keep __pycache__ out of `git add -A`
+    steps:
+      - uses: actions/checkout@v4
+      - name: Test the sync tool (offline)
+        run: python3 -m unittest discover -s tool -p "test_*.py"
+      - name: Sync apps.json and icons with Google Play and the App Store
+        run: python3 tool/sync_stores.py
+      - name: Commit catalogue change
+        run: |
+          # .last-sync is only rewritten when the last commit is 45+ days old,
+          # so `git add -A` picks it up only when it changed.
+          git add -A
+          if git diff --cached --quiet; then echo "No changes."; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git diff --cached --name-only | grep -qvxF .last-sync; then
+            git commit -m "Catalogue: sync with Google Play and the App Store"
+          else
+            git commit -m "Catalogue: keep the daily store sync scheduled"
+          fi
+          git push
