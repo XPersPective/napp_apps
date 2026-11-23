@@ -4,6 +4,7 @@
     {
       "id": "doctorfilter",
       "androidPackage": "com.crazypenguin.doctorfilter",
+      "appStoreId": "6821332436",
       "icon": "https://raw.githubusercontent.com/XPersPective/napp_apps/HEAD/icons/doctorfilter.png",
       "name": {
         "af": "DoctorFilter Bloulig Filter",
