@@ -196,6 +196,7 @@
     {
       "id": "nshoptor",
       "androidPackage": "com.crazypenguin.nshoptor",
+      "appStoreId": "6827116818",
       "icon": "https://raw.githubusercontent.com/XPersPective/napp_apps/HEAD/icons/nshoptor.png",
       "name": {
         "en": "NShoptor: Smart Grocery List",
